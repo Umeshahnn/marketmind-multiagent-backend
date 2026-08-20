@@ -15,7 +15,7 @@ def get_groq_llm(temperature: float = 0.2, max_tokens: Optional[int] = 800) -> C
         logger.error("GROQ_API_KEY is missing or invalid in environment variables!")
         raise ValueError("GROQ_API_KEY is not configured in environment variables.")
     
-    model_name = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+    model_name = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
     logger.debug(f"Initializing ChatGroq (model={model_name}, temp={temperature}, max_tokens={max_tokens})")
     
     kwargs = {
